@@ -1,0 +1,34 @@
+:SSCCE: http://www.sscce.org/[SSCCE]
+:qmlscene: http://qt-project.org/doc/qt-5/qtquick-qmlscene.html[qmlscene]
+
+== Dummy data models and properties for QML
+
+When you are building a quick prototype UI in QML, or when you are isolating an
+issue writing a {SSCCE}, you can use a feature in {qmlscene} (or the visual Qt
+Quick Designer in Creator) that inserts properties in the root context from
+files in a directory. This saves you from having to add an example model in C++.
+
+This repository contains some example models that you can use in your prototypes
+and examples. The properties will be seen in your QML document with the same
+name as the file in disk. All the models have names ending in `Model` to avoid
+name clashes. For example:
+
+[source,qml]
+----
+include::example.qml[]
+----
+
+This is an alternative to using something like `model: 42`, where the view would
+have an even more dummy model of 42 elements without content. You could use the
+index to generate a string, but it would be very ugly to simulate a change in
+the model contents, for example.
+
+=== Isn't this still too boring?
+
+Yes, for now at least. The idea is to add richer models with several roles that
+you could use to prototype complex views with heavier delegates. Also,
+instantiating some models at will, instead of adding all of them as context
+properties should be supported.
+
+Feel free to fill issues with your wished use case.
+
