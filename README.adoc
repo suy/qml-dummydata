@@ -15,7 +15,15 @@ name clashes. For example:
 
 [source,qml]
 ----
-include::example.qml[]
+import QtQuick 2.0
+
+ListView {
+    width: 800; height: 600
+    model: aWordsModel
+    delegate: Text {
+        text: word
+    }
+}
 ----
 
 This is an alternative to using something like `model: 42`, where the view would
