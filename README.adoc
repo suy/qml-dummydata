@@ -13,6 +13,7 @@ and examples. The properties will be seen in your QML document with the same
 name as the file in disk. All the models have names ending in `Model` to avoid
 name clashes. For example:
 
+////
 [source,qml]
 ----
 import QtQuick 2.0
@@ -25,6 +26,17 @@ ListView {
     }
 }
 ----
+////
+
+ifdef::env-github[]
+link:example.qml[]
+endif::env-github[]
+ifndef::env-github[]
+[source,qml]
+----
+include::example.qml[]
+----
+endif::env-github[]
 
 This is an alternative to using something like `model: 42`, where the view would
 have an even more dummy model of 42 elements without content. You could use the
